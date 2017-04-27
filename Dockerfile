@@ -5,7 +5,8 @@ LABEL maintainer "Nabil Muhammad Firdaus <123.nabil.dev@gmail.com>"
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Add repositories
-RUN add-apt-repository -y ppa:ondrej/php
+RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg && \
+    echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
 
 # Update package lists
 RUN apt-get update
