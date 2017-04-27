@@ -6,7 +6,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Initial setup
 RUN apt-get update && \
-    apt-get install -y python-software-properties
+    apt-get install -y \
+        software-properties-common \
+        python-software-properties
 
 # Add repositories through PPA
 RUN add-apt-repository -y ppa:ondrej/php && \
