@@ -56,6 +56,7 @@ RUN apt-get update && \
         xfonts-75dpi xfonts-base xfonts-scalable imagemagick x11-apps
 
 
+
 # Display versions
 RUN php -v
 RUN composer -V
