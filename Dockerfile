@@ -29,7 +29,7 @@ RUN apt-get install -y \
     openssh-client
 
 # Install PHP 7.1
-RUN apt-get install -y \
+RUN apt-get install -y --allow-unauthenticated \
     php7.1-fpm \
     php7.1-cli \
     php7.1-curl \
