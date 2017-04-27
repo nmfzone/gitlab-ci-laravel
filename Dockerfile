@@ -4,17 +4,30 @@ LABEL maintainer "Nabil Muhammad Firdaus <123.nabil.dev@gmail.com>"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-# Install essential packages
+# Initial setup
 RUN apt-get update && \
-    apt-get install -y apt-transport-https lsb-release ca-certificates wget curl build-essential git unzip supervisor mysql-client openssh-client
+    apt-get install -y python-software-properties
 
-# Add repositories
-RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg && \
-    echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
+# Add repositories through PPA
+RUN add-apt-repository -y ppa:ondrej/php && \
+    apt-get update
+
+# Install essential packages
+RUN apt-get install -y \
+    apt-transport-https \
+    lsb-release \
+    ca-certificates \
+    wget \
+    curl \
+    build-essential \
+    git \
+    unzip \
+    supervisor \
+    mysql-client \
+    openssh-client
 
 # Install PHP 7.1
-RUN apt-get update && \
-    apt-get install -y \
+RUN apt-get install -y \
         php7.1-fpm \
         php7.1-cli \
         php7.1-curl \
