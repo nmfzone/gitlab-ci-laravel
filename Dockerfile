@@ -57,9 +57,12 @@ RUN curl -sL https://deb.nodesource.com/setup_7.x | bash - && apt-get install -y
 # Laravel Dusk support
 RUN apt-get update && \
     apt-get -y install libxpm4 libxrender1 libgtk2.0-0 libnss3 libgconf-2-4 \
-        chromium xvfb gtk2-engines-pixbuf xfonts-cyrillic xfonts-100dpi \
+        chromium-browser xvfb gtk2-engines-pixbuf xfonts-cyrillic xfonts-100dpi \
         xfonts-75dpi xfonts-base xfonts-scalable imagemagick x11-apps
 
+ADD toolkit/xvfb-chromium /usr/bin/xvfb-chromium
+RUN ln -s /usr/bin/xvfb-chromium /usr/bin/google-chrome
+RUN ln -s /usr/bin/xvfb-chromium /usr/bin/chromium-browser
 
 
 # Display versions
