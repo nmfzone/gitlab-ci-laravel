@@ -31,6 +31,7 @@ RUN apt-get update && \
         chromium xvfb gtk2-engines-pixbuf xfonts-cyrillic xfonts-100dpi \
         xfonts-75dpi xfonts-base xfonts-scalable imagemagick x11-apps
 
+
 # Display versions
 RUN php -v
 RUN composer -V
