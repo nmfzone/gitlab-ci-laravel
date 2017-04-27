@@ -28,17 +28,17 @@ RUN apt-get install -y \
 
 # Install PHP 7.1
 RUN apt-get install -y \
-        php7.1-fpm \
-        php7.1-cli \
-        php7.1-curl \
-        php7.1-mysql \
-        php7.1-mcrypt \
-        php7.1-mbstring \
-        php7.1-dom \
-        php7.1-xdebug \
-        php7.1-tidy \
-        php7.1-gd \
-        php7.1-zip
+    php7.1-fpm \
+    php7.1-cli \
+    php7.1-curl \
+    php7.1-mysql \
+    php7.1-mcrypt \
+    php7.1-mbstring \
+    php7.1-dom \
+    php7.1-xdebug \
+    php7.1-tidy \
+    php7.1-gd \
+    php7.1-zip
 
 # Install Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
