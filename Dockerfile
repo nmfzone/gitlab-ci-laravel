@@ -10,6 +10,9 @@ RUN apt-get update && \
         software-properties-common \
         python-software-properties
 
+# Add trusted keys
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C
+
 # Add repositories through PPA
 RUN add-apt-repository -y ppa:ondrej/php && \
     apt-get update
