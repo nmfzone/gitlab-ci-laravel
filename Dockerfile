@@ -5,8 +5,8 @@ LABEL maintainer "Nabil Muhammad Firdaus <123.nabil.dev@gmail.com>"
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Setup Locale
-RUN locale-gen en_US.UTF-8 && \
-    export LANG=en_US.UTF-8
+RUN export LC_ALL="en_US.UTF-8" && \
+    export LANG="en_US.UTF-8"
 
 # Initial setup
 RUN apt-get update && \
