@@ -51,6 +51,9 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     mv composer.phar /usr/local/bin/composer && \
     php -r "unlink('composer-setup.php');"
 
+# Install PHP CodeSniffer
+RUN composer global require "squizlabs/php_codesniffer=*"
+
 # Install NodeJs
 RUN curl -sL https://deb.nodesource.com/setup_7.x | bash - && apt-get install -y nodejs
 
