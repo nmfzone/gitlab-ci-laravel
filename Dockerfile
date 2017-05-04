@@ -5,7 +5,8 @@ LABEL maintainer "Nabil Muhammad Firdaus <123.nabil.dev@gmail.com>"
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Setup Locale
-RUN apt-get install language-pack-en && \
+RUN apt-get update && \
+    apt-get install language-pack-en && \
     update-locale LANG=en_US.UTF-8
 
 # Initial setup
