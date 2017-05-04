@@ -4,11 +4,6 @@ LABEL maintainer "Nabil Muhammad Firdaus <123.nabil.dev@gmail.com>"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-# Setup Locale
-RUN apt-get update && \
-    apt-get install -y language-pack-en && \
-    update-locale LANG=en_US.UTF-8
-
 # Initial setup
 RUN apt-get update && \
     apt-get install -y \
@@ -19,7 +14,7 @@ RUN apt-get update && \
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C
 
 # Add repositories through PPA
-RUN add-apt-repository -y ppa:ondrej/php && \
+RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php && \
     apt-get update
 
 # Install essential packages
