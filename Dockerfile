@@ -6,7 +6,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Setup Locale
 RUN apt-get update && \
-    apt-get install language-pack-en && \
+    apt-get install -y language-pack-en && \
     update-locale LANG=en_US.UTF-8
 
 # Initial setup
