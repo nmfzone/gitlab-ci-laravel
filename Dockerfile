@@ -4,6 +4,8 @@ LABEL maintainer "Nabil Muhammad Firdaus <123.nabil.dev@gmail.com>"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
+RUN export LANG=C.UTF-8
+
 # Initial setup
 RUN apt-get update && \
     apt-get install -y \
